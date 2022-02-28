@@ -37,11 +37,11 @@ public class DataGenerator {
                 .then() //"тогда ожидаем"
                 .statusCode(200);  //код 200 ОК
     }
-
+    //выводим рандомно логин
     public static String getRandomLogin() {
         return faker.name().firstName();
     }
-
+    //выводим рандомно паспорт
     public static String getRandomPassword() {
         return faker.internet().password();
     }
@@ -49,11 +49,11 @@ public class DataGenerator {
     public static class Registration {
         private Registration() {
         }
-
+        //пользователь, но незарег в системе
         public static InfoUser getUser(String status) {
             return new InfoUser(getRandomLogin(), getRandomPassword(), status);
         }
-
+        //создание пользователя в базе
         public static InfoUser getRegisteredUser(String status) {
             var registeredUser = getUser(status);
             sendRequest(registeredUser);
