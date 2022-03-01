@@ -22,7 +22,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Install
-        run: java -jar app-ibank.jar -P:profile=test &
+        run: java -jar./artifacts/app-ibank.jar -P:profile=test &
           - name: BuildScript1
             run: chmod +x gradlew
           - name: BuildScript2
